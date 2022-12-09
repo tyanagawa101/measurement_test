@@ -31,37 +31,26 @@ $(document).ready(function(){
    var day = new Date();
    var hour = day.getSeconds()%10;
  
-   if( hour <= 1 )	{	
+   if( hour <= 0 )	{	
    	$('.timechange-sample').css('background-color','#212F9A');
    }
-   else if( hour <= 2 )	{	
+   else if( hour <= 1 )	{	
    	$('.timechange-sample').css('background-color','#F3C336');
    }	
-   else if( hour <= 3 )	{	
+   else if( hour <= 2 )	{	
    	$('.timechange-sample').css('background-color','#DA1414');
    }
-   else if( hour <= 4 )	{	
+   else if( hour <= 3 )	{	
    	$('.timechange-sample').css('background-color','#212FBA');
    }
-   else if( hour <= 5 )	{	
+   else if( hour <= 4 )	{	
    	$('.timechange-sample').css('background-color','#BD5001');
    }
-   else if( hour <= 6 )	{	
+   else if( hour <= 5 )	{	
    	$('.timechange-sample').css('background-color','#573AEC');
    }	
 	
-   else if( hour <= 7 )	{	
-   	$('.timechange-sample').css('background-color','#F3C336');
-   }
-   else if( hour <= 11 ) {
-   	$('.timechange-sample').css('background-color','#DA1414');
-   }
-   else if( hour <= 16 ) {	
-   	$('.timechange-sample').css('background-color','#BD5001');
-   }
-   else if( hour <= 20 ) {
-   	$('.timechange-sample').css('background-color','#573AEC');
-   }
+
 });
 </script>
 </body>
