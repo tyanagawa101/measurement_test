@@ -6,9 +6,48 @@
 <title>HTML入門-ページリダイレクト</title>
 </head>
 <body>
-<h1>リダイレクト</h1>
-<p>本サイトは移転しました。5秒後にジャンプします。<br>
-ジャンプしない場合は、以下のURLをクリックしてください。</p>
-<p><a href="index.html">移転先のページ</a></p>
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ 
+<!-- html -->
+<div>
+	<p class="timechange-sample">DEMO</p>
+</div>
+ 
+<!-- css -->
+<style>
+	.timechange-sample{
+	    width: 200px;
+	    text-align: center;
+	    padding: 20px 5px;
+	    background-color: #333;
+	    color: #FFF;
+	}
+</style>
+ 
+<!-- script -->
+<script type="text/javascript">
+$(document).ready(function(){
+   var day = new Date();
+   var hour = day.getHours();
+ 
+   if( hour <= 1 )	{	
+   	$('.timechange-sample').css('background-color','#212F9A');
+   }
+   else if( hour <= 7 )	{	
+   	$('.timechange-sample').css('background-color','#F3C336');
+   }
+   else if( hour <= 11 ) {
+   	$('.timechange-sample').css('background-color','#DA1414');
+   }
+   else if( hour <= 16 ) {	
+   	$('.timechange-sample').css('background-color','#BD5001');
+   }
+   else if( hour <= 20 ) {
+   	$('.timechange-sample').css('background-color','#573AEC');
+   }
+});
+</script>
 </body>
 </html>
