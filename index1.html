@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="1;URL=index.html">
+<title>HTML入門-ページリダイレクト</title>
+</head>
+<body>
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ 
+<!-- html -->
+<div class="timechange-sample">
+
+</div>
+ 
+<!-- css -->
+<style>
+	.timechange-sample{
+            width: 1920px;
+	    height: 1080px;
+	    background-color: #333;
+	    color: #FFF;
+	}
+</style>
+ 
+<!-- script -->
+<script type="text/javascript">
+$(document).ready(function(){
+   var day = new Date();
+   var hour = day.getSeconds()%10;
+ 
+   if( hour <= 0 )	{	
+   	$('.timechange-sample').css('background-color','#212F9A');
+   }
+   else if( hour <= 1 )	{	
+   	$('.timechange-sample').css('background-color','#F3C336');
+   }	
+   else if( hour <= 2 )	{	
+   	$('.timechange-sample').css('background-color','#DA1414');
+   }
+   else if( hour <= 3 )	{	
+   	$('.timechange-sample').css('background-color','#212FBA');
+   }
+   else if( hour <= 4 )	{	
+   	$('.timechange-sample').css('background-color','#BD5001');
+   }
+   else if( hour <= 5 )	{	
+   	$('.timechange-sample').css('background-color','#573AEC');
+   }	
+	
+
+});
+</script>
+</body>
+</html>
