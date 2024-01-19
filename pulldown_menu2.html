@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プルダウンメニューと複数行選択</title>
+  <style>
+
+
+    /* スタイルを追加 */
+    #myDropdown {
+      margin-right: 10px; /* プルダウンメニューと複数行選択エリアの間の余白を設定 */
+      margin-bottom: 30px;
+    }
+
+    #divbox{
+      height: 100px;
+      width: 800px;
+
+
+    }
+
+    #checkbox-container {
+      display: flex;
+      flex-direction: column; /* 縦に配置 */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="divbox">
+    <!-- プルダウンメニュー -->
+    <select id="myDropdown">
+      <option value="option1">パターンA</option>
+      <option value="option2">パターンB</option>
+    </select>
+
+    <div id="checkbox-container">
+      <!-- チェックボックス -->
+      <label>
+        <input type="checkbox" value="option1"> 日中などPCを使う時間帯は100%充電、
+        夜間などPCを使わない時間帯は80%充電
+      </label>
+  
+      <label>
+        <input type="checkbox" value="option2"> 朝などPC利用開始前に100%まで充電、
+        その他の時間は80%充電
+        
+      </label>
+  
+      <label>
+        <input type="checkbox" value="option3"> 朝などPC利用開始前と、夕方の移動・帰宅前に
+        100%まで充電、その他の時間は80%充電
+        
+      </label>
+      <label>
+        <input type="checkbox" value="option3"> 常に80%充電
+
+      </label>
+    </div>
+
+</body>
+</html>
