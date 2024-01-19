@@ -3,94 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Checkbox Dropdown</title>
-  <style>
-    /* スタイリング */
-    .custom-dropdown {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .selected-options {
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      width: 200px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      max-height: 150px;
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      border-top: none;
-    }
-
-    .dropdown-content label {
-      display: block;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-
-    /* チェックボックスのスタイル */
-    .custom-checkbox {
-      margin-right: 5px;
-    }
-
-    /* ドロップダウンを表示 */
-    .show {
-      display: block;
-    }
-  </style>
+  <title>Default Scrolled Select</title>
 </head>
 <body>
 
-  <h2>カスタム チェックボックス ドロップダウン</h2>
 
-  <div class="custom-dropdown" onclick="toggleDropdown()">
-    <div class="selected-options" id="selectedOptions">選択してください</div>
-    <div class="dropdown-content" id="options">
-      <label><input type="checkbox" class="custom-checkbox" value="option1"> Option 1</label>
-      <label><input type="checkbox" class="custom-checkbox" value="option2"> Option 2</label>
-      <label><input type="checkbox" class="custom-checkbox" value="option3"> Option 3</label>
-    </div>
+<div>
+<select name="fruits" multiple size="3" id="fruitsSelect">
+  <option value="apple">Outlook</option>
+  <option value="banana" selected>GoogleMail</option>
+  <option value="enmpty"></option>
+
+</select>
+
+    <!-- ボタン -->
+    <button id="myButton">予定表</button>
   </div>
 
-  <script>
-    // ドロップダウンの表示/非表示を切り替える関数
-    function toggleDropdown() {
-      var dropdown = document.getElementById("options");
-      dropdown.classList.toggle("show");
-    }
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // スクロール位置を調整
+  // var selectElement = document.getElementById('fruitsSelect');
+  var selectElement = document.getElementsByName('りんご');
+  selectElement.scrollTop = selectElement.scrollHeight; // 最下部にスクロール
 
-    // チェックボックスの状態を更新する関数
-    function updateSelectedOptions() {
-      var checkboxes = document.querySelectorAll(".custom-checkbox");
-      var selectedOptions = document.getElementById("selectedOptions");
+}
+);
 
-      var selectedValues = Array.from(checkboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
-
-      selectedOptions.textContent = selectedValues.length > 0 ? selectedValues.join(', ') : '選択してください';
-    }
-
-    // ドキュメント全体でクリックがあればドロップダウンを閉じる
-    document.addEventListener("click", function(event) {
-      var dropdown = document.getElementById("options");
-      if (event.target.closest(".custom-dropdown") !== dropdown) {
-        dropdown.classList.remove("show");
-      }
-
-      // チェックボックスの状態を更新
-      updateSelectedOptions();
-    });
-  </script>
+</script>
 
 </body>
 </html>
